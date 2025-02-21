@@ -1,9 +1,9 @@
-import img from "../assets/login_signup_jmg.png"
+import img from "../../assets/login_signup_jmg.png"
 import { Stack, Box, Image, Flex, Text, Heading } from "@chakra-ui/react"
-import icon1 from "../assets/Icon1.png"
-import icon2 from "../assets/Icon2.png"
-import icon3 from "../assets/Icon3.png"
-import icon4 from "../assets/Icon4.png"
+import icon1 from "../../assets/Icon1.png"
+import icon2 from "../../assets/Icon2.png"
+import icon3 from "../../assets/Icon3.png"
+import icon4 from "../../assets/Icon4.png"
 
 const About = () => {
     const aboutInfo = [
@@ -14,7 +14,7 @@ const About = () => {
     ]
     return (
         <>
-            <Stack w="100%" h="fit-content" bg="#f5f5f5" padding="1rem 0">
+            <Stack w="100vw" h="fit-content" bg="#f5f5f5" padding="1rem 0">
                 <Flex w="80%" justify="space-around" align="flex-end" m="auto">
                     <Box w="30%" display={{base: "none", sm: "none", md:"none", lg: "block"}}>
                         <Image src={img} w="100%" />

@@ -1,22 +1,18 @@
-import { Flex, Box, Text, Heading, HStack, Input, Image, Link, Button, Icon } from "@chakra-ui/react"
+import { Flex, Box, Text, Heading, HStack, Input, Image, Button, Icon } from "@chakra-ui/react"
 import { Checkbox } from "@/components/ui/checkbox"
 import { InputGroup } from "@/components/ui/input-group"
-import { LuMail, LuKey, LuUser, LuContact } from "react-icons/lu"
+import { LuMail, LuKey } from "react-icons/lu"
 import { FaCartShopping, FaFacebookF, FaGoogle } from "react-icons/fa6";
-import login_signup_img from "../assets/login_signup_jmg.png"
+import login_signup_img from "../../assets/login_signup_jmg.png"
 
-import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 
-const AuthForm = () => {
+import { useState } from "react"
+
+const Login = () => {
     const [signIn, setSignIn] = useState(true)
 
-    const toggleAuthForm = () => {
-        setSignIn(!signIn)
-    }
-    
-    useEffect(()=>{
-        document.title=`Kwaan ${signIn?"sign in":"sign up"}`
-    }, [signIn])
+    document.title = "kwaan login"
 
     return (
         <>
@@ -37,12 +33,14 @@ const AuthForm = () => {
                     </Flex>
                 </Flex>
 
-                {/* right side i.e. AuthForm */}
+                {/* right side i.e. login form */}
                 <Box w={["90%", "90%", "90%", "50%"]} h="fit-content" position="relative">
-                    {/* container of AuthForm */}
+                    {/* container of login form */}
                     <Flex direction="column" gap="16px" w={["full", "70%"]} position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" >
 
-                        <Heading color="#111111" fontSize="40px" lineHeight="58.46px" fontWeight="700" letterSpacing="6%">KWAAN.</Heading>
+                        <Link to="/">
+                            <Heading color="#111111" fontSize="40px" lineHeight="58.46px" fontWeight="700" letterSpacing="6%">KWAAN.</Heading>
+                        </Link>
                         <Flex direction="column" gap="16px" w="100%" padding="32px" borderRadius="20px" boxShadow="0 4px 10px rgba(0, 0, 0, 0.2)">
 
                             <Flex direction="column" gap="16px">
@@ -57,9 +55,8 @@ const AuthForm = () => {
                             <form action="#">
                                 <Flex direction="column" gap="16px">
                                     {/* sign in form */}
-                                    <Flex direction="column" gap="20px" display={signIn ? "flex" : "none"}>
-                                        <Flex direction="column" gap="12px" display={signIn ? "flex" : "none"
-                                        }>
+                                    <Flex direction="column" gap="20px">
+                                        <Flex direction="column" gap="12px">
                                             <HStack gap="10" w="full">
                                                 <InputGroup flex="1" startElement={<LuMail />}>
                                                     <Input type="email" bgColor="#f0f4f8" color="gray.700" padding="12px" borderRadius="10px" border="none" placeholder="Mail" />
@@ -78,42 +75,17 @@ const AuthForm = () => {
                                         <Button bgColor="#111111" color="white" padding="12px" borderRadius="10px" height="44px">Sign in</Button>
                                     </Flex>
 
-                                    {/* sign up form */}
-                                    <Flex direction="column" display={signIn ? "none" : "flex"} gap="12px">
-                                        <HStack gap="10" w="full">
-                                            <InputGroup flex="1" startElement={<LuUser />}>
-                                                <Input type="text" bgColor="#f0f4f8" color="gray.700" padding="12px" borderRadius="10px" border="none" placeholder="Full Name" />
-                                            </InputGroup>
-                                        </HStack>
-                                        <HStack gap="10" w="full">
-                                            <InputGroup flex="1" startElement={<LuContact />}>
-                                                <Input type="text" bgColor="#f0f4f8" color="gray.700" padding="12px" borderRadius="10px" border="none" placeholder="Phone Number" />
-                                            </InputGroup>
-                                        </HStack>
-                                        <HStack gap="10" w="full">
-                                            <InputGroup flex="1" startElement={<LuKey />}>
-                                                <Input type="password" bgColor="#f0f4f8" color="gray.700" padding="12px" borderRadius="10px" border="none" placeholder="Password" />
-                                            </InputGroup>
-                                        </HStack>
-                                        <HStack gap="10" w="full">
-                                            <InputGroup flex="1" startElement={<LuKey />}>
-                                                <Input type="password" bgColor="#f0f4f8" color="gray.700" padding="12px" borderRadius="10px" border="none" placeholder="Re-enter Password" />
-                                            </InputGroup>
-                                        </HStack>
-                                        <Button bgColor="#111111" color="white" padding="12px" borderRadius="10px" height="44px">Sign up</Button>
-                                    </Flex>
-
                                     <Flex justify="flex-end" align="center" gap="24px" color="black">
                                         <Text>Or Sign up with</Text>
                                         <Flex gap="16px">
-                                        <Icon as={FaFacebookF} boxSize="18px" />
-                                        <Icon as={FaGoogle} boxSize="18px" />
+                                            <Icon as={FaFacebookF} boxSize="18px" />
+                                            <Icon as={FaGoogle} boxSize="18px" />
                                         </Flex>
-                                        
+
                                     </Flex>
                                     <Flex justify={["center", "flex-end"]} align="center" color="black" gap="8px" >
-                                        <Text fontSize={["14px", "18px"]}>{!signIn ? "Already have an account?" : "Don't you have an account?"}</Text>
-                                        <Link fontWeight="600" color="#111111" onClick={toggleAuthForm}>{!signIn ? "Sign in" : "Sign up"}</Link>
+                                        <Text fontSize={["14px", "18px"]}>Don't you have an account?</Text>
+                                        <Link to="/signup">Sign up</Link>
                                     </Flex>
                                 </Flex>
                             </form>
@@ -125,4 +97,4 @@ const AuthForm = () => {
     )
 }
 
-export default AuthForm
+export default Login

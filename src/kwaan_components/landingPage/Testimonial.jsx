@@ -1,10 +1,10 @@
 import { Box, Heading, Flex, Text, Icon, Image, Stack } from "@chakra-ui/react"
 import { FaRegStar, FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import user from "../assets/userReview.png"
+import user from "../../assets/userReview.png"
 const Testimonial = () => {
     return (
         <>
-            <Box w="100%" bg="#fff" p={6}>
+            <Box w="100vw" bg="#fff" p={6}>
                 <Flex justify="center" align="center" w="80%" m="auto">
                     <Icon as={FaArrowLeft} boxSize="5" color="black" />
                     <Flex direction="column" gap="6" w={["100%", "60%"]} m="auto">
