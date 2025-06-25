@@ -8,7 +8,8 @@ import NewArrivalSection from "@/pages/New_Arrivals/NewArrivalSection";
 import PopularProductSection from "@/pages/popularProducts/PopularProductSection";
 import SelectedProduct from "@/pages/selectedItem";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
+import { NAVIGATION_ROUTES } from "./routes.constant";
+import Admin from "@/admin";
 
 const AppRoutes = () => {
   return (
@@ -16,13 +17,14 @@ const AppRoutes = () => {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/new_arrival" element={<NewArrivalSection />} />
-          <Route path="/popular_products" element={<PopularProductSection />} />
-          <Route path="/product/:productId" element={<SelectedProduct />} />
-          <Route path="/cartpage" element={<CartPage />} />
+          <Route path={NAVIGATION_ROUTES.PRODUCT_LIST} element={<HomePage />} />
+          <Route path={NAVIGATION_ROUTES.LOGIN} element={<Login />} />
+          <Route path={NAVIGATION_ROUTES.SIGNUP} element={<Signup />} />
+          <Route path={NAVIGATION_ROUTES.NEW_ARRIVAL} element={<NewArrivalSection />} />
+          <Route path={NAVIGATION_ROUTES.POPOULAR_PRODUCT} element={<PopularProductSection />} />
+          <Route path={NAVIGATION_ROUTES.SELECTED_PRODUCT} element={<SelectedProduct />} />
+          <Route path={NAVIGATION_ROUTES.CART_PAGE} element={<CartPage />} />
+          <Route path={NAVIGATION_ROUTES.ADMIN_DASHBOARD} element={<Admin />} />
         </Routes>
         <Footer />
       </BrowserRouter>
