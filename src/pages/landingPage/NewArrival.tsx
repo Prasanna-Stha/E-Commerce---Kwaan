@@ -51,7 +51,7 @@ const NewArrival = () => {
               transition="all 0.3s ease"
               onClick={() => setSelectedCategory(category)}
             >
-              {category}
+              bye bye{category}
             </Button>
           ))}
         </Flex>
