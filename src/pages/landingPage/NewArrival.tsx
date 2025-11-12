@@ -67,7 +67,7 @@ const NewArrival = () => {
 
       {/* Product Grid */}
       <Grid
-        templateColumns="repeat(auto-fit, minmax(200px, 1fr))"
+        templateColumns="repeat(auto-fit, minmax(250px, 1fr))"
         gap={6}
         mx="auto"
         w="100%"
@@ -84,7 +84,7 @@ const NewArrival = () => {
                   imgSrc={product.image}
                   price={product.price}
                   productStatus="New"
-                  rating={product.rating.count}
+                  rating={product.rating}
                   addToCart={false}
                   titleLength={30}
                 />

@@ -28,7 +28,7 @@ const Product = ({
             transform: "scale(1.02)",
             boxShadow: "0 6px 20px rgba(0, 0, 0, 0.15)",
           }}
-          h="100%"
+          h="420px"
           cursor="pointer"
           border="1px solid rgba(0, 0, 0, 0.1)"
         >

@@ -13,6 +13,4 @@ const useProductList = () => {
   });
 };
 
-
-
 export { useProductList };
